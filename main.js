@@ -26,5 +26,17 @@ const min = function (numbers) {
 
 const myArray = [2,5,1,54,12];
 
-max(myArray);
-min(myArray);
+// max(myArray);
+// min(myArray);
+
+let numbersArray = [1, 5, 6, 4, 3];
+
+function findAverage(array) {
+  let sum = 0;
+  let length = array.length;
+  array.forEach(num => (sum += num));
+  let average = sum / length;
+  console.log(average);
+}
+
+// findAverage(numbersArray);
