@@ -109,12 +109,12 @@ function positiveFilter(movements) {
     return true;
   }
 } 
-console.log(turtleSteps.filter(positiveFilter));
+// console.log(turtleSteps.filter(positiveFilter));
 
 function totalSteps(steps) {
   return Math.abs(steps[0]) + Math.abs(steps[1]);
 }
-console.log(turtleSteps.map(totalSteps));
+// console.log(turtleSteps.map(totalSteps));
 
 let totalStepsArr = (turtleSteps.map(totalSteps));
 
@@ -122,4 +122,20 @@ function logSteps(steps) {
   console.log(`Turtle took ${steps} steps today.`);
 } 
 
-totalStepsArr.forEach(logSteps);
+// totalStepsArr.forEach(logSteps);
+
+function decodeWord(accumulator, word) {
+  if (word.length === 3) {
+    return accumulator + (' ');
+  } else {
+    return accumulator + (word.slice(-1)).toUpperCase();
+  }
+}
+function reduced(words) {
+  const wordsArray = words.split(' ');
+  // let decoded = [];
+  wordsArray.reduce(decodeWord);
+  console.log(wordsArray.reduce(decodeWord, ''));
+} 
+
+reduced('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest');
