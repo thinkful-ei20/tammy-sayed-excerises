@@ -101,3 +101,25 @@ const tornadoWarning = hazardWarningCreator('Tornado incoming');
 // rocksWarning('Main St and Pacific Ave');
 
 // rocksWarning('Centinela Ave and Olympic Blvd');
+
+const turtleSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+function positiveFilter(movements) {
+  if (movements[0] >= 0 && movements[1] >= 0) {
+    return true;
+  }
+} 
+console.log(turtleSteps.filter(positiveFilter));
+
+function totalSteps(steps) {
+  return Math.abs(steps[0]) + Math.abs(steps[1]);
+}
+console.log(turtleSteps.map(totalSteps));
+
+let totalStepsArr = (turtleSteps.map(totalSteps));
+
+function logSteps(steps) {
+  console.log(`Turtle took ${steps} steps today.`);
+} 
+
+totalStepsArr.forEach(logSteps);
