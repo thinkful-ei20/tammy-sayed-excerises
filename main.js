@@ -69,7 +69,7 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames); // => ['Rich', 'Ray']
+// console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
 // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
@@ -81,3 +81,23 @@ function filter(arr, fn) {
     }
   } return newArray;
 }
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function(location) {
+    warningCounter += 1;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    if (warningCounter === 1) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+    } else if (warningCounter === 0 || warningCounter >= 2) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+    }
+  }; 
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const floodWarning = hazardWarningCreator('Heavy flood');
+const tornadoWarning = hazardWarningCreator('Tornado incoming');
+// rocksWarning('Main St and Pacific Ave');
+
+// rocksWarning('Centinela Ave and Olympic Blvd');
