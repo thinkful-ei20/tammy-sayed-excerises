@@ -69,18 +69,30 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
+// myNames.filter(name => name[0] === 'R');
+
 // console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
 // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
 function filter(arr, fn) {
   let newArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (fn(arr[i]) === true) {
-      newArray.push(arr[i]);
+  arr.forEach(function(word) {
+    if (fn(word) === true) {
+      newArray.push(word);
     }
-  } return newArray;
+  });
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (fn(arr[i]) === true) {
+  //     newArray.push(arr[i]);
+  //   }
+// }
+  return newArray;
 }
+
+
+
+console.log(filteredNames);
 
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
